@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "lineryn",
+    "public": "dist/Angular",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

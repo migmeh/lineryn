@@ -1,0 +1,19 @@
+<div class="contacto mt-5">
+  <form (ngSubmit)="newCat(newCatForm.value)" [formGroup]="newCatForm">
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email"  autocomplete="off">
+    <small class="form-text text-muted">Escriba su dirección electrónica para contactarlo</small>
+  </div>
+  <div class="form-group">
+    <label>Nombre:</label>
+    <input type="text" formControlName="nombre" class="form-control" id="nombre"  placeholder="Nombre" autocomplete="off">
+  </div>
+  <div class="form-group">
+    <label>Mensaje:</label>
+    <textarea formControlName="mensaje" id="mensaje" class="textareaC" ></textarea>
+  </div>
+
+  <button type="submit" class="btn  enviarC">Enviar</button>
+</form>
+</div>
