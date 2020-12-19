@@ -17,7 +17,7 @@ export class ContactoComponent implements OnInit {
   public newCatForm = new FormGroup({
     email: new FormControl('', Validators.required),
     nombre: new FormControl('', Validators.required),
-    mensaje: new FormControl('')
+    mensaje: new FormControl('', Validators.required)
   });
 
 
@@ -34,52 +34,30 @@ export class ContactoComponent implements OnInit {
 
   public newCat(form, documentId = this.documentId) {
 
-    $('#enviado').modal('show');
-
-    if(this.currentStatus == 1) {
       let data = {
         nombre: form.nombre,
         email: form.email,
         mensaje: form.mensaje,
       }
-      this.firestoreService.createCat(data).then(() => {
 
-        this.newCatForm.setValue({
-          email: '',
-          nombre: '',
-          mensaje: ''
+      if(form.nombre!="" && form.email!="" && form.mensaje!=""){
+        this.firestoreService.createCat(data).then(() => {
+
+          this.newCatForm.setValue({
+            email: '',
+            nombre: '',
+            mensaje: ''
+          });
+          $('#enviado').modal('show');
+        }, (error) => {
+          console.error(error);
         });
-      }, (error) => {
-        console.error(error);
-      });
 
-
-    }else{
-
-      let data = {
-        nombre: form.nombre,
-        url: form.url,
-        mensaje: form.mensaje
       }
 
 
-      this.firestoreService.updateCat(documentId, data).then(() => {
-        this.currentStatus = 1;
-        this.newCatForm.setValue({
-          email: '',
-          nombre: '',
-          mensaje: ''
-        });
 
 
-
-
-      }, (error) => {
-        console.log(error);
-      });
-
-
-    }
   }
 
 
