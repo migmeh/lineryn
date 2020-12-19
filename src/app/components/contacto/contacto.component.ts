@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {FirestoreService} from "../../services/firestore/firestore.service";
-
+declare var $: any;
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
@@ -34,7 +34,9 @@ export class ContactoComponent implements OnInit {
 
   public newCat(form, documentId = this.documentId) {
 
-    if (this.currentStatus == 1) {
+    $('#enviado').modal('show');
+
+    if(this.currentStatus == 1) {
       let data = {
         nombre: form.nombre,
         email: form.email,
@@ -50,11 +52,17 @@ export class ContactoComponent implements OnInit {
       }, (error) => {
         console.error(error);
       });
-    } else {
+
+
+    }else{
+
       let data = {
         nombre: form.nombre,
-        url: form.url
+        url: form.url,
+        mensaje: form.mensaje
       }
+
+
       this.firestoreService.updateCat(documentId, data).then(() => {
         this.currentStatus = 1;
         this.newCatForm.setValue({
@@ -62,10 +70,15 @@ export class ContactoComponent implements OnInit {
           nombre: '',
           mensaje: ''
         });
-        //console.log('Documento editado exitósamente');
+
+
+
+
       }, (error) => {
-        //console.log(error);
+        console.log(error);
       });
+
+
     }
   }
 

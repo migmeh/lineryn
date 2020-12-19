@@ -9,6 +9,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ErrorComponent } from './components/error/error.component';
+
 @NgModule({
   declarations: [
     AppComponent,

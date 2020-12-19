@@ -32,3 +32,8 @@ height: 200px;
   float:right;
   font: 20px "Lato", sans-serif;
   }
+
+.modal-content{
+  background-color: #282E34;
+}
+.modal-header, .modal-footer, .modal-body{border:0px;}
