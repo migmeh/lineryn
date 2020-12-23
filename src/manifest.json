@@ -1,0 +1,14 @@
+{
+  "name": "lineryn.com",
+  "short_name": "lineryn.com",
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest",
+  "background_color": "#111111",
+  "icons": [
+    {
+      "src": "assets/images/app.png",
+      "type": "image/png",
+      "sizes": "469x469"
+    }
+  ]
+}

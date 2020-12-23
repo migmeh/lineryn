@@ -1,6 +1,10 @@
 {
   "hosting": {
     "site": "lineryn",
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ],
     "public": "dist/Angular",
     "ignore": [
       "firebase.json",
