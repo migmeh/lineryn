@@ -131,8 +131,18 @@ h3 {
 @media screen and (max-width:750px) and (min-width:0px){
   .noche{letter-spacing: 5px;}
   .noce{letter-spacing: 5px;}
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll; /* Change to scroll for better responsiveness */
+ 
+  }
+  
 }
 @media screen and (max-width:375px) and (min-width:0px){
   .noche{letter-spacing: 2px;}
   .noce{letter-spacing: 2px;}
+
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll; /* Change to scroll for better responsiveness */
+ 
+  }
 }
